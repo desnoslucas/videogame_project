@@ -48,4 +48,15 @@ public class VideoGameService {
         }
         videoGameRepository.save(videogameToAdd);
     }
+
+    public void deleteVideoGame (String name){
+        VideoGame videoGame = new VideoGame();
+        videoGameRepository.deleteByName(videoGame.getName());
+    }
+
+
+    public void deleteById(Long id) {
+        VideoGame videoGame= new VideoGame();
+        videoGameRepository.deleteById(videoGame.getId());
+    }
 }

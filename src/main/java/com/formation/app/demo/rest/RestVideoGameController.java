@@ -34,5 +34,13 @@ public class RestVideoGameController {
         }
     }
 
+    @PostMapping(value = "/deleteGame")
+    public void deleteGame (@PathVariable String name){
+        videoGameService.deleteVideoGame(name);
+    }
 
+    @PostMapping (value="/deleteGameId")
+    public void deleteById (@PathVariable  Long id){
+        videoGameService.deleteById(id);
+    }
 }
