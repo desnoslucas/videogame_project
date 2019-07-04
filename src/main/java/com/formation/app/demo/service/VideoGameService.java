@@ -57,6 +57,6 @@ public class VideoGameService {
 
     public void deleteById(Long id) {
         VideoGame videoGame= new VideoGame();
-        videoGameRepository.deleteById(videoGame.getId());
+        videoGameRepository.deleteById(id);
     }
 }

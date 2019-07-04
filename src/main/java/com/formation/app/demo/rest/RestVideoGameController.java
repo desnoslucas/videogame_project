@@ -34,13 +34,28 @@ public class RestVideoGameController {
         }
     }
 
-    @PostMapping(value = "/deleteGame")
-    public void deleteGame (@PathVariable String name){
-        videoGameService.deleteVideoGame(name);
-    }
+//    @GetMapping(value = "deleteGame/{name}")
+//    public void deleteGame (@PathVariable String name){
+//        videoGameService.deleteVideoGame(name);
+//    }
 
-    @PostMapping (value="/deleteGameId")
-    public void deleteById (@PathVariable  Long id){
+    @GetMapping(value = "deleteGame/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
         videoGameService.deleteById(id);
     }
+
+    @GetMapping(value = "games")
+    public List<VideoGame> listGame() {
+        return videoGameService.getAllGames();
+    }
 }
+
+    /*@PostMapping(value = "/addGame")
+    public String createGame(@ModelAttribute("videoGame") VideoGame videoGame) {
+
+        videoGameService.addGame(videoGame.getName(),
+                videoGame.getContent(),
+                videoGame.getPrice(),
+                videoGame.getStarNumber();
+
+    }*/
