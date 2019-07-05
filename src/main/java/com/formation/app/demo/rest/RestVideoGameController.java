@@ -47,7 +47,6 @@ public class RestVideoGameController {
         Resource picture =  storageService.loadAsResource(pictureName);
 
         return ResponseEntity.ok(picture);
-
     }
 
 
