@@ -39,6 +39,9 @@ public class RestVideoGameController {
         }
     }
 
+    @GetMapping(value = "deleteGame/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        videoGameService.deleteById(id);}
 
     @GetMapping(value = "/{id}/picture")
     public ResponseEntity getPicture(@PathVariable("id") Long id) {
