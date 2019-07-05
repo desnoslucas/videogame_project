@@ -34,5 +34,14 @@ public class RestVideoGameController {
         }
     }
 
+    @GetMapping(value = "deleteGame/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        videoGameService.deleteById(id);
+    }
+
+    @GetMapping(value = "games")
+    public List<VideoGame> listGame() {
+        return videoGameService.getAllGames();
+    }
 
 }
